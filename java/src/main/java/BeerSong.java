@@ -1,11 +1,11 @@
 public class BeerSong {
 
     public String sing(int bottles, int verses) {
-        String result = "";
-        for (int v = verses; verses > 0; verses--) {
-            result += getSingFor(bottles--);
+        String result = getSingFor(bottles);
+        if (verses == 1) {
+            return result;
         }
-        return result;
+        return result + sing(bottles - 1, verses - 1);
     }
 
     private String getSingFor(int bottles) {
