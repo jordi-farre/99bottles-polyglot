@@ -4,6 +4,7 @@ import org.junit.Before;
 
 import static org.junit.Assert.assertEquals;
 
+
 public class BeerSongTest {
 
     private BeerSong beerSong;
