@@ -1,6 +1,14 @@
 public class BeerSong {
 
-    public String sing(int bottles, int verse) {
+    public String sing(int bottles, int verses) {
+        String result = "";
+        for (int v = verses; verses > 0; verses--) {
+            result += getSingFor(bottles--);
+        }
+        return result;
+    }
+
+    private String getSingFor(int bottles) {
         if (bottles == 0) {
             return "No more bottles of beer on the wall, no more bottles of beer.\n" +
                     "Go to the store and buy some more, 99 bottles of beer on the wall.\n\n";
@@ -12,12 +20,6 @@ public class BeerSong {
         if (bottles == 2) {
             return "2 bottles of beer on the wall, 2 bottles of beer.\n" +
                     "Take one down and pass it around, 1 bottle of beer on the wall.\n\n";
-        }
-        if (verse == 2) {
-            return "99 bottles of beer on the wall, 99 bottles of beer.\n" +
-                    "Take one down and pass it around, 98 bottles of beer on the wall.\n\n" +
-                    "98 bottles of beer on the wall, 98 bottles of beer.\n" +
-                    "Take one down and pass it around, 97 bottles of beer on the wall.\n\n";
         }
         return String.format("%s bottles of beer on the wall, %s bottles of beer.\n" +
                 "Take one down and pass it around, %s bottles of beer on the wall.\n\n", bottles, bottles, bottles - 1);
