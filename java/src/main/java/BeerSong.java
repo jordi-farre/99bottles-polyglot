@@ -26,6 +26,6 @@ public class BeerSong {
     }
 
     public String singSong() {
-        throw new UnsupportedOperationException();
+        return sing(99, 100);
     }
 }
